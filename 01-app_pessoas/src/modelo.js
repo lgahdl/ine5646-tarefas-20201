@@ -4,16 +4,16 @@
  * Classe que representa uma pessoa.
  */
 class Pessoa {
-  constructor (nome, idade) {
+  constructor(nome, idade) {
     this.__nome = nome
     this.__idade = idade
   }
 
-  get idade () {
+  get idade() {
     return this.__idade
   }
 
-  get nome () {
+  get nome() {
     return this.__nome
   }
 }
@@ -24,20 +24,20 @@ class Pessoa {
  * @param number idadeLimite
  * @returns [Pessoa]
  */
-function selecionaPessoas (pessoas, idadeLimite) {
-  // FIXME Bug 
+function selecionaPessoas(pessoas, idadeLimite) {
+  pessoas = pessoas.filter((pessoa) => { return pessoa.idade > idadeLimite })
   return pessoas
 }
 
 // Dados fictícios
 const pessoas =
-  [ new Pessoa('Marcolino da Silva', 45),
-    new Pessoa('Tribulino Garrteto', 25),
-    new Pessoa('Burico do Pino Solto', 35),
-    new Pessoa('Gravínea Gama Neto', 30),
-    new Pessoa('Marildo De Lusoneta', 29)
+  [new Pessoa('Marcolino da Silva', 45),
+  new Pessoa('Tribulino Garrteto', 25),
+  new Pessoa('Burico do Pino Solto', 35),
+  new Pessoa('Gravínea Gama Neto', 30),
+  new Pessoa('Marildo De Lusoneta', 29)
   ]
 
 const idadeMinima = 30
 
-export {pessoas, idadeMinima, Pessoa, selecionaPessoas}
+export { pessoas, idadeMinima, Pessoa, selecionaPessoas }
